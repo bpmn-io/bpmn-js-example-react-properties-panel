@@ -1,19 +1,93 @@
 # React Properties Panel for bpmn-js
 
-This project demonstrates how to create a custom properties panel embed in [bpmn-js](https://github.com/bpmn-io/bpmn-js) based on [React](https://reactjs.org/).
+This example demonstrates a custom properties panel for [bpmn-js](https://github.com/bpmn-io/bpmn-js) written in [React](https://reactjs.org/).
 
 ![Demo Screenshot](./resources/screenshot.png)
 
 ## About
 
-Specifically, the example features adding a [custom properties panel](./src/properties-panel), built with [React](https://reactjs.org/). It shows how to create an own implementation of the properties panel besides the original [bpmn-js-properties-panel](https://github.com/bpmn-io/bpmn-js-properties-panel).
+The component [`PropertiesView`](https://github.com/bpmn-io/bpmn-js-example-react-properties-panel/blob/master/app/properties-panel/PropertiesView.js) implements the properties panel. 
 
+The component is mounted via standard React utilities and receives the BPMN modeler instance as props:
 
-Within the properties panel, we feature
+```js
+ReactDOM.render(
+  <PropertiesView modeler={ modeler } />,
+  container
+);
+```
 
-* Displaying and editing BPMN element properties
-* Displaying and editing of [custom extensions](./app/moddle/custom.json)
-* Implementing diagram actions such as changing an element's type
+As part of its life-cycle hooks it hooks up with bpmn-js change and selection events to react to editor changes:
+
+```js
+class PropertiesView extends React.Component {
+
+  ...
+  
+  componentDidMount() {
+  
+    const {
+       modeler
+    } = this.props;
+    
+    modeler.on('selection.changed', (e) => {
+      this.setElement(e.newSelection[0]);
+    });
+
+    modeler.on('element.changed', (e) => {
+      this.setElement(e.element);
+    });
+  }
+
+}
+```
+
+Rendering the component we may display element properties and apply changes:
+
+```js
+class PropertiesView extends React.Component {
+  
+  ...
+  
+  render() {
+  
+    const {
+      element
+    } = this.state;
+    
+    return (
+      <div>
+        <fieldset>
+          <label>id</label>
+          <span>{ element.id }</span>
+        </fieldset>
+
+        <fieldset>
+          <label>name</label>
+          <input value={ element.businessObject.name || '' } onChange={ (event) => {
+            this.updateName(event.target.value);
+          } } />
+        </fieldset>
+      </div>
+    );
+  }
+  
+  updateName(newName) {
+  
+    const {
+      element
+    } = this.state;
+    
+    const { 
+      modeler
+    } = this.props;
+    
+    const modeling = modeler.get('modeling');
+    
+    modeling.updateLabel(element, newName);
+  }
+}
+```
 
 
 ## Run the Example
