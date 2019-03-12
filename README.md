@@ -2,7 +2,7 @@
 
 This project demonstrates how to create a custom properties panel embed in [bpmn-js](https://github.com/bpmn-io/bpmn-js) based on [React](https://reactjs.org/).
 
-![Demo Screenshot](./docs/screenshot.png)
+![Demo Screenshot](./resources/screenshot.png)
 
 ## About
 
