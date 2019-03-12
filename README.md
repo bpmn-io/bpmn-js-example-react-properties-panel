@@ -1,4 +1,4 @@
-# React bpmn-js-properties panel
+# React Properties Panel for bpmn-js
 
 This project demonstrates how to create a custom properties panel embed in [bpmn-js](https://github.com/bpmn-io/bpmn-js) based on [React](https://reactjs.org/).
 
