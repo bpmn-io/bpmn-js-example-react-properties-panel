@@ -13,6 +13,9 @@ const modeler = new Modeler({
   container: $modelerContainer,
   moddleExtensions: {
     custom: customModdleExtension
+  },
+  keyboard: {
+    bindTo: document.body
   }
 });
 
