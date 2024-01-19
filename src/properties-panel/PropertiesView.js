@@ -1,11 +1,11 @@
 import { is } from 'bpmn-js/lib/util/ModelUtil';
 
-import React, { Component } from 'react';
+import React from 'react';
 
 import './PropertiesView.css';
 
 
-export default class PropertiesView extends Component {
+export default class PropertiesView extends React.Component {
 
   constructor(props) {
     super(props);
@@ -17,7 +17,6 @@ export default class PropertiesView extends Component {
   }
 
   componentDidMount() {
-
     const {
       modeler
     } = this.props;
@@ -60,7 +59,6 @@ export default class PropertiesView extends Component {
   }
 
   render() {
-
     const {
       modeler
     } = this.props;

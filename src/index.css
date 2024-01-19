@@ -1,0 +1,32 @@
+body, html {
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: sans-serif;
+}
+
+.modeler-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#modeler-container {
+  flex: 1;
+}
+
+#properties-container {
+  overflow-y: auto;
+
+  border-top: solid 2px #CCC;
+  background: #FAFAFA;
+
+  padding: 5px;
+  height: 200px;
+}

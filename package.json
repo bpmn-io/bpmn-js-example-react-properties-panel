@@ -1,37 +1,54 @@
 {
   "name": "bpmn-js-example-react-properties-panel",
-  "version": "0.0.0",
-  "description": "A custom react properties panel example",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --watch"
-  },
+  "version": "0.2.0",
   "author": {
     "name": "Niklas Kiefer",
     "url": "https://github.com/pinussilvestrus"
   },
+  "contributors": [
+    {
+      "name": "Erik Amaru Ortiz",
+      "url": "https://github.com/eriknyk"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/bpmn-io/bpmn-js-example-react-properties-panel"
   },
   "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "babel-loader": "^8.0.5",
-    "copy-webpack-plugin": "^5.0.0",
-    "css-loader": "^2.1.0",
-    "file-loader": "^3.0.1",
-    "raw-loader": "^1.0.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.1"
-  },
   "dependencies": {
-    "bpmn-js": "^3.2.1",
-    "downloadjs": "^1.4.7",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bpmn-js": "^16.3.2",
+    "raw-loader": "^4.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
