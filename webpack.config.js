@@ -2,7 +2,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    bundle: ['./app/app.js']
+    bundle: ['./src/app.js']
   },
   output: {
     path: __dirname + '/public',
@@ -50,7 +50,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'assets/**', to: 'vendor/bpmn-js', context: 'node_modules/bpmn-js/dist/' },
-        { from: 'index.html', context: 'app/' }
+        { from: 'index.html', context: 'src/' }
       ]
     })
   ],
