@@ -16,7 +16,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            plugins: [ '@babel/plugin-transform-react-jsx'  ]
+            plugins: [
+              '@babel/plugin-transform-react-jsx'
+            ]
           }
         }
       },
@@ -45,10 +47,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: 'assets/**', to: 'vendor/bpmn-js', context: 'node_modules/bpmn-js/dist/' },
-      { from: 'index.html', context: 'app/' }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'assets/**', to: 'vendor/bpmn-js', context: 'node_modules/bpmn-js/dist/' },
+        { from: 'index.html', context: 'app/' }
+      ]
+    })
   ],
   mode: 'development',
   devtool: 'source-map'
