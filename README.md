@@ -8,7 +8,7 @@ This example demonstrates a custom properties panel for [bpmn-js](https://github
 
 ## About
 
-The component [`PropertiesView`](https://github.com/bpmn-io/bpmn-js-example-react-properties-panel/blob/master/app/properties-panel/PropertiesView.js) implements the properties panel. 
+The component [`PropertiesView`](./src/properties-panel/PropertiesView.js) implements the properties panel.
 
 The component is mounted via standard React utilities and receives the BPMN modeler instance as props:
 
