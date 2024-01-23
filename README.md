@@ -1,5 +1,7 @@
 # React Properties Panel for bpmn-js
 
+[![CI](https://github.com/bpmn-io/bpmn-js-example-react-properties-panel/actions/workflows/CI.yml/badge.svg)](https://github.com/bpmn-io/bpmn-js-example-react-properties-panel/actions/workflows/CI.yml)
+
 This example demonstrates a custom properties panel for [bpmn-js](https://github.com/bpmn-io/bpmn-js) written in [React](https://reactjs.org/).
 
 ![Demo Screenshot](./resources/screenshot.png)
@@ -94,6 +96,7 @@ class PropertiesView extends React.Component {
 
 ```sh
 npm install
+
 npm start
 ```
 
