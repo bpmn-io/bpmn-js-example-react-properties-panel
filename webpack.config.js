@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.[cm]?js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -36,7 +36,7 @@ module.exports = {
             use: 'raw-loader',
           },
           {
-            exclude: /\.(js|html|json)$/,
+            exclude: /\.([cm]?js|html|json)$/,
             loader: 'file-loader',
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
